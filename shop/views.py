@@ -24,6 +24,7 @@ def product_detail(request, id, slug):
                                 id=id,
                                 slug=slug,
                                 available=True)
+                                
     cart_product_form = CartAddProductForm()
 
     return render(request,
