@@ -44,23 +44,27 @@
                 
                 <div class="mb-3"> 
                     <var class="price h4">${{ product.price }}</var> 
-                    <span class="text-muted">Aquí va el discound price</span> 
+                    <span class="text-muted">Aquí va el original price</span> 
                 </div> <!-- price-detail-wrap .// -->
                 
                 <p>{{ product.description|linebreaks }}</p>
                 
                 <div class="form-row  mt-4">
-                    <div class="form-group col-md flex-grow-0">
+                    <!-- Spinner price-->
+                    <!-- <div class="form-group col-md flex-grow-0">
                         <div class="input-group mb-3 input-spinner">
                             <div class="input-group-prepend">
                                 <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]">&minus; </button>
                             </div>
+
                             <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="10">
+                            
                             <div class="input-group-append">
                                 <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]">+</button>
                             </div>
                         </div>
-                    </div> <!-- col.// -->
+                    </div> --> 
+                    <!-- End Spinner price-->
 
                     <form action="{% url 'cart:cart_add' product.id %}" method="post">
                         {{ cart_product_form }}

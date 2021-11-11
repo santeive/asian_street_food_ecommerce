@@ -2235,12 +2235,12 @@ fieldset:disabled a.btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #ff6a00;
-  border-color: #ff6a00; }
+  background-color: #C7483D;
+  border-color: #C7483D; }
   .btn-primary:hover {
     color: #fff;
-    background-color: #d95a00;
-    border-color: #cc5500; }
+    background-color: #c7493dc4;
+    border-color: #c7493dc4; }
   .btn-primary:focus, .btn-primary.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(255, 128, 38, 0.5);
             box-shadow: 0 0 0 0.2rem rgba(255, 128, 38, 0.5); }

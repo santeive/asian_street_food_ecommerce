@@ -1276,3 +1276,6 @@ body {
   display: block; }
 
 /*# sourceMappingURL=ui.css.map */
+
+.header-main{position:relative; padding-top:1rem; padding-bottom:1rem; background-color: #0F0F0F;}
+.bg-blue {   background-color: #C7483D;}
