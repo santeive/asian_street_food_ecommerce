@@ -91,12 +91,18 @@
 						</a>
 					</div>-->
 					<div class="widget-header">
+					{% with total_items=cart|length %}
+						{% if total_items > 0 %}
 						<a href="{% url 'cart:cart_detail'%}" class="widget-view">
 							<div class="icon-area">
 								<i class="fa fa-shopping-cart"></i>
 							</div>
-							<small class="text"> Cart </small>
+							<small class="text"> {{ total_items }} item{{total_items|pluralize}}</small>
 						</a>
+						{% else %}
+						<small class="text">Cart is empty</small>
+						{% endif %}
+					{% endwith %}
 					</div>
 				</div> <!-- widgets-wrap.// -->
 			</div> <!-- col.// -->
