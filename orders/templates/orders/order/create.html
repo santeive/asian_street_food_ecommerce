@@ -5,24 +5,69 @@ Checkout
 {% endblock %}
 
 {% block content %}
-<h1>Checkout</h1>
 
-<div class="order-info">
-    <h3>Your order</h3>
-    <ul>
-        {% for item in cart %}
-            <li>
-                {{ item.quantity }}x {{ item.product.name}}
-                <span>${{ item.total_price }}</span>
-            </li>
-        {% endfor %}
-    </ul>
-    <p>Total: ${{ cart.get_total_price }}</p>
-</div>
+<section class="section-content padding-y bg">
+    <div class="container">
 
-<form method="post" class="order-form">
-    {{ form.as_p }}
-    <p><input type="Submit" value='Place order'></p>
-    {% csrf_token%}
-</form>
+        <div class="row">
+            <aside class="col-md-6">
+                <div class="card mb-4">
+                    <article class="card-body">
+                    <header class="mb-4">
+                        <h1 class="card-title">Checkout</h1>
+                    </header>
+                    <div class="order-info mb-4">
+                        <h3>Your order</h3>
+                        <ul class="list-unstyled">
+                            {% for item in cart %}
+                                <li>
+                                    {{ item.quantity }}x {{ item.product.name}}
+                                    <span>${{ item.total_price }}</span>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        <hr>
+                        <p>Total: ${{ cart.get_total_price }}</p>
+                    </div>
+                    <form method="post" class="order-form">
+                        {% csrf_token%}
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label for="{{ form.first_name.id_for_label }}" class="form-label">First Name</label>
+                                {{ form.first_name }}
+                            </div> <!-- form-group end.// -->
+                            <div class="col form-group">
+                                <label for="{{ form.last_name.id_for_label }}" class="form-label">Last Name</label>
+                                {{ form.last_name }}
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group">
+                            <label>Email</label>
+                            {{ form.email }}
+                            <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <label>Address</label>
+                            {{ form.address }}
+                        </div> <!-- form-group end.// -->
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label for="{{ form.first_name.id_for_label }}" class="form-label">Postal Code</label>
+                                {{ form.postal_code }}
+                            </div> <!-- form-group end.// -->
+                            <div class="col form-group">
+                                <label for="{{ form.last_name.id_for_label }}" class="form-label">City</label>
+                                {{ form.city }}
+                            </div> <!-- form-group end.// -->
+                        </div> <!-- form-row end.// -->
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Place Order  </button>
+                        </div> <!-- form-group// --> 
+                    </form>
+                    </article> <!-- card-body end .// -->
+                </div> <!-- card.// -->
+            </aside>
+        </div>
+
+    </div>
+</section>
+
 {% endblock %}
